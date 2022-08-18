@@ -1,8 +1,8 @@
 'use strict';
 
-// let num = 20;
+/* let num = 20;
 
-/* function showFirstMessage(a) {
+function showFirstMessage(a) {
    console.log(a);
    let num = 10;
    console.log(num);
@@ -29,20 +29,19 @@ console.log( calc(4100, 2) ); */
 }
 
 const obtainRet = ret();
-console.log(obtainRet);
- */
+console.log(obtainRet); */
 
 /* const fnctnXprssn = function() {
   console.log('Natali');
-}; */
+};
 
-/* fnctnXprssn();
+fnctnXprssn(); */
 
-const calc =  (a, b) => a + b;
+/* const calc = (a, b) => a + b;
 
 console.log( calc(4, 3) ); */
 
-/* function createCounter() {
+/* function createCounter() {       //need to repeat
    let counter = 0
    const myFunction = function() {
      counter = counter + 1;
@@ -50,7 +49,7 @@ console.log( calc(4, 3) ); */
    }
    return myFunction;
  }
-const increment = createCounter()
+const increment = createCounter();
 const c1 = increment();
 const c2 = increment();
 const c3 = increment();
