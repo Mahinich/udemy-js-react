@@ -42,7 +42,7 @@ fnctnXprssn(); */
 console.log( calc(4, 3) ); */
 
 /* function createCounter() {       //need to repeat
-   let counter = 0
+   let counter = 0;
    const myFunction = function() {
      counter = counter + 1;
      return counter;
@@ -68,26 +68,24 @@ function promo(result) {
 }
 
 const a = exchange(10, usdCurr)
-promo(a);
+promo(a); */
 
-exchange(10, usdCurr);
- */
+/* function test() {
+  for (let i = 0; i < 100; i++) {
+    console.log(i);
+    if (i === 3) return
+  }
+  console.log('Done');
+}
 
-// function test() {
-//   for (let i = 0; i < 5; i++) {
-//     console.log(i);
-//     if (i === 3) return
-//   }
-//   console.log('Done');
-// }
-
-// test();
+test(); */
 
 /* function humName(a) {
   return('Hello' + a);
 }
 
-humName('Andriy'); */
+humName('Andriy');
+console.log(humName (' asd') ); */
 
 /* function returnNeighboringNumbers(num) {
   const a = new Array(num - 1, num, num + 1);
