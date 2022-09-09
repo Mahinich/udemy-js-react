@@ -116,3 +116,53 @@ returnNeighboringNumbers(5); */
 }
  
 operation(4, 13); */
+
+
+/* exercises after lesson 23 */
+
+/* function firstTask() {
+  const arr = [3, 5, 8, 16, 20, 23, 50];
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    result[i] = arr[i];
+  }
+  console.log(result);
+  return result;
+}
+
+firstTask(); */
+
+
+/* const arr = [5, 10, 'Shopping', 20, 'Homework'];
+
+function double () {
+  const arrN = [];
+
+  for(let i = 0; i < arr.length; i++) {
+    arrN[i] = arr[i];
+
+    if(typeof(arrN[i]) === 'number') {
+      arrN[i] *= 2
+    } else {
+      arrN[i] = `${arrN[i]} - done`
+    }
+  }
+
+  console.log(arrN);
+  return arrN;
+}
+
+double (); */
+
+/* const arr = [5, 10, 'Shopping', 20, 'Homework'];
+const result = [];
+
+function reverse() {
+  for (let i = 1; i <= arr.length; i++) {
+    result[i - 1] = arr[arr.length - i];
+  }
+  console.log(result);
+}
+
+reverse(); */
