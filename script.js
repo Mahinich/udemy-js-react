@@ -98,7 +98,7 @@ console.log(humName (' asd') ); */
 
 returnNeighboringNumbers(5); */
 
-/* function operation(base, count) {
+function operation(base, count) {
   if (typeof(count) !== 'number' || count <=0) {
     return(base);
   }
@@ -115,8 +115,7 @@ returnNeighboringNumbers(5); */
   console.log(str);
 }
  
-operation(4, 13); */
-
+operation(4, 13);
 
 /* exercises after lesson 23 */
 
@@ -197,3 +196,25 @@ for (let i = 0; i <= lines; i++) {
 }
 
 console.log(result) */
+
+
+/* exercise after 27 */
+
+function progression(num, repeater) {
+  if(typeof(repeater) !== 'number' || repeater <= 0) {
+    return num;
+  }
+  
+  let result = '';
+
+  for(let i = 1; i <= repeater; i++) {
+    if(i === repeater) {
+      result += `${num * i}`;
+    } else {
+      result += `${num * i}---`;
+    }
+  }
+  console.log(result);
+}
+
+progression(5, 7);
