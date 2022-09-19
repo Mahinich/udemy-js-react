@@ -98,7 +98,7 @@ console.log(humName (' asd') ); */
 
 returnNeighboringNumbers(5); */
 
-function operation(base, count) {
+/* function operation(base, count) {
   if (typeof(count) !== 'number' || count <=0) {
     return(base);
   }
@@ -116,7 +116,7 @@ function operation(base, count) {
 }
  
 operation(4, 13);
-
+ */
 /* exercises after lesson 23 */
 
 /* function firstTask() {
@@ -200,7 +200,7 @@ console.log(result) */
 
 /* exercise after 27 */
 
-function progression(num, repeater) {
+/* function progression(num, repeater) {
   if(typeof(repeater) !== 'number' || repeater <= 0) {
     return num;
   }
@@ -217,4 +217,67 @@ function progression(num, repeater) {
   console.log(result);
 }
 
-progression(5, 7);
+progression(5, 7); */
+
+/* advanced exercises after 29 */
+
+// -------------------------------
+
+/* function calculateVolumeAndArea(length) {
+
+  if(typeof(length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+    // console.log('Error');
+    return 'Error';
+  }
+  
+  let volume = length ** 3;
+  let area = length **2 * 6;
+  // 
+  let str = `Об'єм куба: ${volume}, а площа поверхні: ${area}`;
+  // console.log(str);
+  return str;
+}
+
+const a = calculateVolumeAndArea(2 * '8');
+console.log(a); */
+
+// -------------------------------
+
+/* function getCoupeNumber(place) {
+  let errMessage = `Error, check the number`;
+  let noSuchPlace = `Don't have such place`;
+  if (Number.isNaN(place) || place < 0 || !Number.isInteger(place)) {
+    return errMessage;
+  }
+
+  if(place === 0 || place > 36) {
+    return noSuchPlace;
+  }
+
+  // if (place <= 4) {
+  //   return 1;
+  // } else if (place <= 8) {
+  //   return 2;
+  // } else if (place <= 12) {
+  //   return 3;
+  // } else if (place <= 16) {
+  //   return 4;
+  // } else if (place <= 20) {
+  //   return 5;
+  // } else if (place <= 24) {
+  //   return 6;
+  // } else if (place <= 28) {
+  //   return 7;
+  // } else if (place <= 32) {
+  //   return 8;
+  // } else if (place <= 36) {
+  //   return 9;
+  // }
+
+  return Math.ceil(place / 4);
+}
+
+const coupe = getCoupeNumber(2);
+console.log(coupe); */
+
+// -------------------------------
