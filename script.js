@@ -281,3 +281,95 @@ const coupe = getCoupeNumber(2);
 console.log(coupe); */
 
 // -------------------------------
+
+/* function getTimeFromMinutes(time) {
+  const errNotification = 'Error, unacceptable data';
+
+  if(Number.isNaN(time) || !Number.isInteger(time) || time < 0) {
+    console.log(errNotification);
+    return errNotification;
+  }
+
+  const hours = Math.floor(time / 60);
+  const minutes = time % 60;
+
+  let strWithTime = '';
+
+  switch (hours) {
+    case 0:
+      strWithTime = 'godin'
+      break;
+    case 1:
+      strWithTime = 'godina'
+      break;
+    case 2: case 3: case 4:
+      strWithTime = 'godini'
+      break;
+    default:
+      strWithTime = 'godin';
+  }
+  
+  let notificationStr = `Це ${hours} ${strWithTime}, ${minutes} хвилин`;
+
+  console.log(notificationStr);
+  return notificationStr;
+}
+ 
+getTimeFromMinutes(187); */
+
+// -------------------------------
+
+/* function findMaxNumber(a, b, c, d) {
+  if (Number.isNaN(a) || Number.isNaN(b) || Number.isNaN(c) || Number.isNaN(d) || a === undefined || b === undefined || c === undefined || d === undefined) {
+    console.log(0);
+    return 0;
+  }
+
+  // if (a > b && a > c && a > d) {
+  //   console.log(a);
+  //   return a;
+  // } else if (b > a && b > c && b > d) {
+  //   console.log(b);
+  //   return b;
+  // } else if (c > a && c > b && c > d) {
+  //   console.log(c);
+  //   return c;
+  // } else if (d > a && d > b && d > c) {
+  //   console.log(d);
+  //   return d;
+  // }
+  console.log(Math.max(a, b, c, d))
+  return Math.max(a, b, c, d);
+}
+
+findMaxNumber(12, 2, 17.3, 168); */
+
+// -------------------------------
+
+/* function fib(num) {
+  if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+      console.log('err');
+      return "";
+  }
+
+  let result = '';
+  let first = 0;
+  let second = 1;
+
+  for (let i = 0; i < num; i++) {
+      if (i + 1 === num) {
+          result += `${first}`;
+          // Без пробела в конце
+      } else {
+          result += `${first} `;
+      }
+
+      let third = first + second;
+      first = second;
+      second = third;
+  }
+  return result;
+}
+
+let fibValue = fib(5);
+console.log(fibValue); */
