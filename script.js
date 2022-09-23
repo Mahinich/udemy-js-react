@@ -183,7 +183,88 @@ console.log(rest.length); */
 
 //--------------------------------
 
- let [first, second] = [];
+/*  let [first, second] = [];
 
  console.log(first);
- console.log(second);
+ console.log(second); */
+
+//--------------------------------
+
+/* let values = {
+  one: 'small',
+  two: 'medium',
+  three: 'large',
+};
+
+let {one: first, two: second, three: third} = values;
+
+console.log(first);
+console.log(second);
+console.log(third); */
+
+//--------------------------------
+
+/* let values = {
+  one: 'small',
+  two: 'medium',
+  three: 'large',
+};
+
+let {one, two, three, four = 100} = values;
+
+console.log(one);
+console.log(two);
+console.log(three);
+console.log(four); */
+
+//--------------------------------
+
+/* const definitions = {
+  a: 'first',
+  b: 'second',
+  c: 'third',
+};
+
+let {a, ...rest} = definitions;
+
+console.log(a);
+console.log(rest.b);
+console.log(rest.c); */
+
+//--------------------------------
+
+/* const definitions = {
+  a: 'first',
+  b: 'second',
+  c: 'third',
+};
+
+let a, b, c;
+
+// {a, b, c} = definitions; ERROR
+({a, b, c} = definitions); // NO ERROR
+
+console.log(a);
+console.log(b);
+console.log(c); */
+
+//--------------------------------
+
+/* let options = {
+  items: {
+    a: 'stol',
+    b: 'monitor'
+  },
+  subjects: ['keys', 'earbuds'],
+  name: 'Andriy',
+}
+
+let {items:{a, b}, subjects:[subj1, subj2], surname = 'Mah'} = options;
+
+console.log(a);
+console.log(b);
+console.log(subj1);
+console.log(subj2);
+console.log(surname); */
+
+//--------------------------------
