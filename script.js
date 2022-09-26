@@ -268,3 +268,73 @@ console.log(subj2);
 console.log(surname); */
 
 //--------------------------------
+
+/* const obj = {
+  name: 'Andriy',
+  surname: 'Mahinich',
+}
+
+Object.defineProperty(obj, 'name', {
+  writable: true,
+  configurable: false,
+});
+
+Object.defineProperties(obj, {
+  name: {value: 'Andriy', writable:false},
+  surname: {value: 'Mahinich', writable:true},
+});
+
+obj.surname = 'asd';
+console.log(obj.name + '\n' + obj.surname); */
+
+//--------------------------------
+
+/* let person = {
+  name: 'Andriy',
+  surname: 'Mahinich',
+
+  get fullName() {
+    return `${this.name}, ${this.surname}`;
+  }
+};
+
+console.log(person.fullName); */
+
+//--------------------------------
+
+/* let person = {
+  name: 'Andriy',
+  surname: 'Mahinich',
+
+  get fullName() {
+    return `${this.name}, ${this.surname}`;
+  },
+
+  set fullName(value) {
+    [this.name, this.surname] = value.split(' ');
+  }
+}
+
+person.fullName = 'Natali Tarnavskaya';
+
+console.log(person.name);
+console.log(person.surname); */
+
+//--------------------------------
+
+let person = {
+  name: 'Andriy',
+  surname: 'Mahinich',
+};
+
+Object.defineProperty(person, 'fullname', {
+  get() {
+    return `${this.name}, ${this.surname}`;
+  },
+
+  set(value) {
+    [this.name, this.surname] = value.split(' ');
+  }
+});
+
+console.log(person.fullname);
