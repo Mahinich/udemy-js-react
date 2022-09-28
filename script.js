@@ -152,9 +152,10 @@ for (let [x, y] of Object.entries(person) ) {
 
 //--------------------------------
 
-/*  const person = new Map();
+ /* const person = new Map();
  person.set('name', 'Andriy');
  person.set('age', 30);
+ console.log(person);
 
  for (let [key, value] of person) {
   console.log(`${key}: ${value}`)
@@ -186,7 +187,7 @@ console.log(rest.length); */
 
 //--------------------------------
 
-/*  let [first, second] = [];
+ /* let [first, second] = [];
 
  console.log(first);
  console.log(second); */
@@ -236,7 +237,7 @@ console.log(rest.c); */
 
 //--------------------------------
 
-/* const definitions = {
+/* const definitions = { 
   a: 'first',
   b: 'second',
   c: 'third',
@@ -272,6 +273,8 @@ console.log(surname); */
 
 //--------------------------------
 
+//Descriptors
+
 /* const obj = {
   name: 'Andriy',
   surname: 'Mahinich',
@@ -288,7 +291,7 @@ Object.defineProperties(obj, {
 });
 
 obj.surname = 'asd';
-console.log(obj.name + '\n' + obj.surname); */
+console.log(obj.name + '\n' + obj.surname) */;
 
 //--------------------------------
 
@@ -325,7 +328,7 @@ console.log(person.surname); */
 
 //--------------------------------
 
-/* let person = {
+let person = {
   name: 'Andriy',
   surname: 'Mahinich',
 };
@@ -340,4 +343,4 @@ Object.defineProperty(person, 'fullname', {
   }
 });
 
-console.log(person.fullname); */
+console.log(person.fullname);
