@@ -1,7 +1,7 @@
 'use strict';
 
 
-/*const options = {
+/* const options = {
   name: 'Andrii',
   height: 185,
   age: 30,
@@ -20,7 +20,7 @@ console.log( Object.values(options) );
 const h1 = document.querySelector('h1'); //const for diversity
 
 h1.innerHTML = Object.values(options).length
-document.write( Object.values(options) );
+document.write( Object.keys(options) );
 
 // let counter = 0;
 // for (let key in options) {
@@ -29,7 +29,10 @@ document.write( Object.values(options) );
 //       console.log(`Властивість ${jey} яка має значення ${options[key][jey]} `);
 //       counter++
 //     }
-//   } else {
+//   } else if (typeof(options[key]) === 'function') {
+//     console.log(options[key]());
+//   }
+//   else {
 //   console.log(key + ' ———> ' + options[key]);
 //   counter++
 //   }
@@ -77,7 +80,7 @@ console.log(Object.values(obj)); */
 
 let {age, height} = anotherObj.parameters;
 
-console.log(age, height);
+console.log(age + '\n' + height);
 
 const multitude = ['Andriy', 30];
 
@@ -90,8 +93,8 @@ console.log(typeof(years),',',typeof(name)); */
 /* let [a, b, c,] = 'Andriy qweasd Mahinich'.split(' ');
 
 console.log(a);
-console.log(b);
-console.log(c); */
+console.log(c);
+console.log(b); */
 
 //--------------------------------
 
@@ -107,7 +110,7 @@ console.log(c); */
 
 //--------------------------------
 
-/* let [a, b, c, d] = 'Andrii';
+/* let [a, b, c, d] = 'Andriy';
 
 console.log(a);
 console.log(b);
@@ -322,7 +325,7 @@ console.log(person.surname); */
 
 //--------------------------------
 
-let person = {
+/* let person = {
   name: 'Andriy',
   surname: 'Mahinich',
 };
@@ -337,4 +340,4 @@ Object.defineProperty(person, 'fullname', {
   }
 });
 
-console.log(person.fullname);
+console.log(person.fullname); */
