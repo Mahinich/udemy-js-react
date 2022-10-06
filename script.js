@@ -2,8 +2,8 @@
 
 /* string methods and properties */
 
-let str = 'Andriy Mahinich';
-const arr = ['table', 'pen', 'notes'];
+/* let str = 'Andriy Mahinich';
+const arr = ['table', 'pen', 'notes']; */
 
 // console.log( str.slice(2, 6) ); 
 // console.log( str.slice(-6, -2) ); 
@@ -90,3 +90,33 @@ console.log(parseFloat(num3)); */
 /* console.log( Math.max(3, 5, 8, 1, 0.4) );
 console.log( Math.min(3, 5, 8, 1, 0.4) );
 console.log( Math.pow(2, 3) ); */
+
+/* MORE EXERCISE WITH STRING */
+
+/* let str = ' Simple words';
+
+console.log(str[2]);
+console.log(str.at(str.length-1));
+console.log(str.at(-2)); // .at method starts from the end if the argument is a negative;  */
+
+/* let str = 'Mahinich Andriy';
+
+for (let char of str) {
+  console.log(char);
+}
+
+for (let i = str.length-1; i >= 0; i--) {
+  console.log(str[i]);
+} */
+
+/* let str = 'vocabluary';
+
+str = 'AAA' + str[2];
+
+console.log(str); */
+
+let str = 'samooborobna garna'.toUpperCase();
+
+console.log(str);
+
+console.log(str.indexOf('OB', 2));
