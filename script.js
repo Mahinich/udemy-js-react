@@ -155,8 +155,62 @@ reverse(someString); */
 
 // TASK 2
 
-const baseCurrencies = ['USD', 'EUR'];
+/* const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
-const conc = baseCurrencies.concat(additionalCurrencies);
-console.log(conc);
+const allCurrencies = baseCurrencies.concat(additionalCurrencies);
+
+console.log(allCurrencies);
+
+function availableCurr(arr, missingCurr) {
+
+} */
+
+/* const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+  let str = '';
+
+  // SLOLUTION 1
+
+  // if(arr.length == 0) {
+    // str += 'Have no currencies';
+  // } else {
+    // str += 'Available currencies are: \n'
+  // }
+// 
+  // for(let curr of arr) {
+    // if(curr !== missingCurr) {
+      // str += `${curr} \n`;
+    // }
+    // 
+  // } 
+  // str += '\n';
+
+  // SOLUTION 2
+  
+  // arr.forEach((curr, i) => {
+    // if(curr !== missingCurr) {
+      // str += `${curr} \n`;
+    // }
+  // })
+// 
+  // str += '\n';
+
+  // SOLUTION 3
+
+  // for (let i = 0; i < arr.length; i++) {
+    // if(arr[i] === missingCurr) {
+      // continue;
+    // }
+    // str += `${arr[i]}\n`;
+  // }
+
+  // console.log(str);
+  return str;
+}
+
+let funcCall = availableCurr;
+
+console.log(funcCall([...baseCurrencies, ...additionalCurrencies], 'RUB')); */
