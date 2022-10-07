@@ -214,3 +214,31 @@ function availableCurr(arr, missingCurr) {
 let funcCall = availableCurr;
 
 console.log(funcCall([...baseCurrencies, ...additionalCurrencies], 'RUB')); */
+
+/* let str = 'word';
+let newStr = new String(str);
+
+// console.log(str);
+// console.log(newStr);
+
+console.dir([1, 2, 3]);
+console.log([1, 2, 3]); */
+
+const hero = {
+  health: 500,
+  armor: 100,
+  sayHello: () => {
+    console.log('hello')
+  }
+};
+
+const john = {
+  health: 100,
+};
+
+// john.__proto__ = hero;
+
+Object.setPrortotypeOf(john, hero);
+console.log(john);
+console.log(john.armor);
+console.log(john.sayHello);
