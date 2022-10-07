@@ -223,22 +223,3 @@ let newStr = new String(str);
 
 console.dir([1, 2, 3]);
 console.log([1, 2, 3]); */
-
-const hero = {
-  health: 500,
-  armor: 100,
-  sayHello: () => {
-    console.log('hello')
-  }
-};
-
-const john = {
-  health: 100,
-};
-
-// john.__proto__ = hero;
-
-Object.setPrortotypeOf(john, hero);
-console.log(john);
-console.log(john.armor);
-console.log(john.sayHello);
