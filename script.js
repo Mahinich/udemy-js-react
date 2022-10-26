@@ -1,77 +1,58 @@
-//exercise 1
+'use strict';
 
-/* const shoppingMallData = {
-  shopsParams: [{
-    width: 10,
-    length: 5,},
-    {width: 33,
-    length: 21,},
-    {width: 24,
-    length: 3,},
-    {width: 30,
-    length: 20,},
-    {width: 24,
-    length: 12,}, 
-    {width: 31,
-    length: 62,},
-    {width: 1.2,
-    length: 5.3,},
-    {width: 1.8,
-    length: 1.2,},
-    {width: 14,
-    length: 7.255,},
-    {width: 11,
-    length: 6,}],
+const restorantData = {
+	menu: [
+			{
+					name: 'Salad Caesar',
+					price: '14$'
+			},
+			{
+					name: 'Pizza Diavola',
+					price: '6$'
+			},
+			{
+					name: 'Beefsteak',
+					price: '17$'
+			},
+			{
+					name: 'Napoleon',
+					price: '7$'
+			}
+	],
+	waitors: [
+			{name: 'Alice', age: 22}, {name: 'John', age: 24}
+	],
+	averageLunchPrice: '20$',
+	openNow: true
+};
 
-  height: 5,
-  moneyPer1m3: 30,
-  budget: 50000,
+
+function isOpen(prop) {
+	let answer = '';
+	prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+	return answer;
 }
 
-function isEnoughBudget(data) {
-  let square = 0;
-  let volume = 0;
+console.log(isOpen(restorantData.openNow))
 
-  data.shopsParams.forEach(shop => {
-  square += shop.width * shop.length;
-  })
-  volume = square * data.height;
-  console.log(volume);
-
-  if(volume > data.budget / data.moneyPer1m3) {
-    console.log('This budget is not enough');
-  } else {
-    console.log('Enough budget');
-  }
-
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+	if (+fDish.price.slice(0, -1) + +sDish.price.slice(0, -1) < +average.slice(0, -1)) {
+			return 'Цена ниже средней';
+	} else {
+			return 'Цена выше средней';
+	}
 }
 
-isEnoughBudget(shoppingMallData); */
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
 
-//exercise 2
+function transferWaitors(data) {
+    const copy = JSON.parse(JSON.stringify(data));
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
-
-function sortStudentsByGroups(arr) {
-  arr.sort();
-
-  const a = [], b = [], c = [], rest = [];
-
-  for(let i = 0; i < arr.length; i++) {
-    if (i < 3) {
-      a.push(arr[i]);
-    } else if (i < 6) {
-      b.push(arr[i]);
-    } else if (i < 9) {
-      c.push(arr[i]);
-    } else {
-      rest.push(arr[i]);
-    }
-  }
-
-console.log([a, b, c, `Students who are left: ${rest.lenght === 0 ? '-' : rest.join(', ')}`]);
-  return [a, b, c, `Students who are left: ${rest.lenght === 0 ? '-' : rest.join(', ')}`];
+    copy.waitors[0] = {name: 'Mike', age: 32};
+		console.log(copy)
+		console.log(restorantData)
+    return copy;
 }
 
-sortStudentsByGroups(students);
-
+transferWaitors(restorantData);
