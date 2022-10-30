@@ -1,51 +1,24 @@
 'use strict';
 
-const box      = document.getElementById('box');
-const btns     = document.getElementsByTagName('button');
-const circles  = document.getElementsByClassName('circle');
-const hearts   = document.querySelectorAll('.heart');
-const oneHeart = document.querySelector('div');
-const wrapper  = document.querySelector('.wrapper');
+const box = document.getElementById('box');
+console.log(box);
 
-/* box.style.backgroundColor = 'pink';
-box.style.width = '400px'; */
+const btns = document.getElementsByTagName('button');
+console.log(btns);
 
-box.style.cssText = 'background-color: aqua; width: 150px; cursor: pointer;'
-
-btns[2].style.borderRadius = '25px 5px 25px 5px';
-
-circles[0].style.backgroundColor = 'green';
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
 
 // for (let i = 0; i < hearts.length; i++) {
 //   hearts[i].style.backgroundColor = 'yellow';
 // }
 
-hearts.forEach(element => {
-  element.style.backgroundColor = 'pink';
+hearts.forEach(item => {
+  console.log(item);
 })
 
-const div = document.createElement('div');
-const textNode = document.createTextNode('Andriy');
-
-div.classList.add('black');
-
-// document.body.append(div);
-document.body.prepend(div);
-div.innerHTML = '<h1>Andriy</h1>';
-
-div.insertAdjacentHTML('afterend', '<h2>And</h2>');
-
-// div.textContent = 'Mahinich';
-
-// wrapper.append(div);
-// wrapper.prepend(div);
-
-// btns[1].before(div);
-// btns[1].after(div);
-
-// circles[0].remove();
-
-// hearts[1].replaceWith(circles[1]);
+const oneHeart = document.querySelector('div');
+console.log(oneHeart);
 
 // wrapper.insertBefore(btns[2], hearts[1]); //derprecated
 // wrapper.removeChild(hearts[1]); //derprecated
