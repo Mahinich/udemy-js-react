@@ -29,11 +29,13 @@ const genre = document.querySelector('.promo__genre');
 const bg = document.querySelector('.promo__bg');
 const listOfFilms = document.querySelector('.promo__interactive-list');
 
-
-document.querySelector('.header__logo').addEventListener('mouseenter', (e) => {
-    e.target;
+const deleteListener = (e) => {
+    console.log(e.target);
     action();
-})
+}
+
+document.querySelector('.header__logo').addEventListener('click', deleteListener);
+// document.querySelector('.header__logo').removeEventListener('click', deleteListener);
 
 
 
@@ -46,7 +48,7 @@ function action() {
     bg.style.cssText = 'background-image:url("img/bg.jpg")';
     
     movieDB.movies.sort();
-    console.log(movieDB.movies);
+    // console.log(movieDB.movies);
     
     listOfFilms.innerHTML = '';
     
