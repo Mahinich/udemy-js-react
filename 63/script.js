@@ -44,3 +44,5 @@ const newBtn = document.createElement('button');
 newBtn.classList.add('red');
 
 wrap.append(newBtn);
+wrap.before(newBtn);
+wrap.after(newBtn);
