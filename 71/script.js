@@ -21,7 +21,7 @@ btn.addEventListener('click', () => {
   // console.log(box.scrollTop);
 });
 
-// console.log(box.getBoundingClientRect().bottom);
+// console.log(box.getBoundingClientRect());
 
 const style = window.getComputedStyle(box);
 
