@@ -1,0 +1,17 @@
+button {
+  width: 200px;
+  height: 50px;
+  border: 2px solid black;
+  /* outline: 3px solid green; */
+  /* outline-offset: 5px; */
+  box-shadow: 0 0 3pt 2pt cornflowerblue;
+  transition-duration: 2s;
+}
+
+.another_style {
+  background-color: aqua;
+}
+
+.different_style {
+  width: 100px;
+}
