@@ -78,7 +78,7 @@ btn.addEventListener('click', (e) => {
   num: 5,
   sayNumber: function() {
     const say = () => {
-      console.log(this.num);
+      console.log(this.num`);
     };
     say();
   }
