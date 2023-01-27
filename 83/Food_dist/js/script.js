@@ -217,4 +217,64 @@ window.addEventListener('DOMContentLoaded', () => {
     11,
     '.menu .container',
   ).render();
+
+  // Forms to server 
+
+  const forms = document.querySelectorAll('form');
+
+  const message = { 
+    success: 'Дякуємо, ми з вами звʼяжемось',
+    loading: 'Дані завантажуються',
+    error: 'Виникла помилка',
+  };
+
+  forms.forEach(item => {
+    postData(item);
+  });
+    
+  function postData(form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const statusMessage = document.createElement('div');
+      statusMessage.textContent = message.loading;
+      form.append(statusMessage);
+
+      const request = new XMLHttpRequest();
+      request.open('POST', 'server.php');
+
+      // request.setRequestHeader('Content-type', 'multipart/form-data'); // 1(formData format send) Do not set Header while using in conjunction XHR and formData. formData object does this itselves. If to set up it manually, we won't see a response from server. It shows array(0) in the console.
+      request.setRequestHeader('Content-type', 'application/json'); // 2 (json format send) use headers if we need to send data in JSON format
+      const formData = new FormData(form);
+
+      const obj = {}; // 2 (json format send) use this structure to prepear for converting formData object to JSON
+      formData.forEach(function(value, key) { //2 (json format send)
+        obj[key] = value; //2 (json format send)
+      }); //2json
+
+      const json = JSON.stringify(obj); // 2 (json format send)
+      
+      request.send(json); // 2 (json format send) use this to send data in JSON format
+      // request.send(formData); // 1(formData format send) use formData object if to send data in XHR format
+
+      // const resetValue= form.querySelectorAll('input'); //variable for alternative variant instead of form.reset();
+
+      request.addEventListener('load', () => {
+        if (request.status === 200) {
+          console.log(request.response);
+          statusMessage.textContent = message.success;
+          form.reset();
+          setTimeout(() => {
+            statusMessage.remove();
+          }, 2000);
+         /*  resetValue.forEach(elem => { // alternative variant instead of form.reset();
+            elem.value = '';
+          }) */
+        } else {
+          console.log(request.response);
+        statusMessage.textContent = message.error;
+        }
+      });
+    });
+  }
 });
