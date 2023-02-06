@@ -1,6 +1,6 @@
 'use strict';
  
-/* console.log('Запит данних');
+console.log('Запит данних');
 
 const req = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -32,7 +32,7 @@ req.then((product) => {
   console.error('Сталась помилка');
 }).finally(() => {
   console.log("Finally");
-}); */
+}); 
 
 // const test = time => {
 //   return new Promise(resolve => {
@@ -45,7 +45,7 @@ req.then((product) => {
 
 // /* Promise.all([test(1000), test(2000)]).then(() => {
 //   console.log('All');
-// }); */
+// });
 // Promise.race([test(1000), test(2000)]).then(() => {
 //   console.log('All');
 // });
