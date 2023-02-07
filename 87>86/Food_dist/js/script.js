@@ -257,9 +257,9 @@ window.addEventListener('DOMContentLoaded', () => {
       fetch('server1.php', { 
         method: 'POST',
         headers: {
-          'Content-type': 'application/json'
+          'Content-type': 'application/json' // no headers if to use FormData object instead of JSON
         }, 
-        body: JSON.stringify(formDataObj)
+        body: JSON.stringify(formDataObj) // use FormData object instead of JSON
       })
       .then(data => data.text())
       .then(data => {
