@@ -259,7 +259,7 @@ window.addEventListener('DOMContentLoaded', () => {
         headers: {
           'Content-type': 'application/json' // no headers if to use FormData object instead of JSON
         }, 
-        body: JSON.stringify(formDataObj) // use FormData object instead of JSON
+        body: JSON.stringify(formDataObj) // use FormData object as alternative to JSON
       })
       .then(data => data.text())
       .then(data => {
