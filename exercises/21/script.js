@@ -11,7 +11,7 @@ const funds = [
 
 const getPositiveIncomeAmount = (data) => {
   return data.filter(item => item.amount > 0).reduce((sum, item) => {
-    return sum + item.amount;
+    sum + item.amount;
   }, 0);
 };
 

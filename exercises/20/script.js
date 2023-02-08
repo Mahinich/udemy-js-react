@@ -21,6 +21,7 @@ const films = [
 
 /* function showGoodFilms(arr) {
   const goodRating = arr.filter(film => film.rating >=8);
+  return goodRating
   console.log(goodRating);
 }
 
@@ -28,6 +29,7 @@ showGoodFilms(films); */
 
 /* function showListOfFilms(arr) {
  const filmsNames = arr.reduce((acc, film) => acc + ',' + film.name, '');
+ return filmsNames
  console.log(filmsNames);
 };
 
