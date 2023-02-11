@@ -207,7 +207,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }); */
 
-  getResource(`http://localhost:3000/menu`)
+  getResource(`http://localhost:3000/menu`) //use this method instead of Classes creation, if the elements appears only once on a page. 
     .then(data => createCard(data));  
 
     function createCard(data) {
