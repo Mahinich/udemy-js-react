@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
   // TIMER
     
-  const deadline = '2023-02-28';
+  const deadline = '2023-01-31';
 
   function getTimeRemaining(endtime) {
     let days, hours, minutes, seconds;
@@ -138,7 +138,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   //MODAL MODIFICATION 
 
-  const modalTimerId = setTimeout(showModal, 50000);
+  // const modalTimerId = setTimeout(showModal, 50000);
 
   function showModalByScroll() {
     if (window.pageYOffset + document.documentElement.clientHeight >= 
@@ -207,7 +207,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }); */
 
-  getResource(`http://localhost:3000/menu`) //use this method instead of Classes creation, if the elements appears only once on a page. 
+  getResource(`http://localhost:3000/menu`)
     .then(data => createCard(data));  
 
     function createCard(data) {
@@ -313,16 +313,52 @@ window.addEventListener('DOMContentLoaded', () => {
       hideModal();
     }, 4000);
   }
+
+  // SLIDER
+  
+  const slides  = document.querySelectorAll('.offer__slide'),
+        prev    = document.querySelector('.offer__slider-prev'),
+        next    = document.querySelector('.offer__slider-next'),
+        total   = document.querySelector('#total'),
+        current = document.querySelector('#current');
+  let slideIndex = 1;
+
+  showSlides(slideIndex);
+
+  if (slides.length < 10) {
+    total.textContent = `0${slides.length}`;
+  } else {
+    total.textContent = slides.length;
+  }
+
+  function showSlides(n) {
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if( n < 1) {
+      slideIndex = slides.length;
+    }
+
+    slides.forEach(slide => slide.style.display = 'none');
+    slides[slideIndex - 1].style.display = 'block';
+
+    if (slides.length < 10) {
+      current.textContent = `0${slideIndex}`;
+    } else {
+      current.textContent = slideIndex;
+    }
+  }
+
+  function shiftSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  prev.addEventListener('click', function() {
+    shiftSlides(-1);
+  });
+
+  next.addEventListener('click', function() {
+    shiftSlides(1);
+  });
 });
-
-/* An exmple of fetch method */
-
-// fetch('https://jsonplaceholder.typicode.com/posts', { // fetch returns Promise
-//     method: 'POST',
-//     body: JSON.stringify({name: 'Natali', status: 'wife'}),
-//     headers: {
-//       'Content-type': 'application/json'
-//     }
-//   }) 
-//   .then(response => response.json()) //returns Promise
-//   .then(json => console.log(json));
