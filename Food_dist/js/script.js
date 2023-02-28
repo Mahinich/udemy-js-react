@@ -340,8 +340,12 @@ window.addEventListener('DOMContentLoaded', () => {
       slideIndex = slides.length;
     }
 
-    slides.forEach(slide => slide.style.display = 'none');
-    slides[slideIndex - 1].style.display = 'block';
+    // slides.forEach(slide => slide.style.display = 'none');
+    // slides[slideIndex - 1].style.display = 'block';
+
+    slides.forEach(slide => slide.classList.add('hide'));
+    slides[slideIndex - 1].classList.remove('hide');
+    slides[slideIndex - 1].classList.add('show');
 
     if (slides.length < 10) {
       current.textContent = `0${slideIndex}`;
