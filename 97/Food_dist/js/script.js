@@ -153,14 +153,14 @@ window.addEventListener('DOMContentLoaded', () => {
   // Use classes for cards
 
   class MenuCard {
-    constructor(src, alt, title, descr, price, parentSelector, ...classes) {
+    constructor(src, alt, title, descr, price, selector, ...classes) {
       this.src = src;
       this.alt = alt;
       this.title = title;
       this.descr = descr;
       this.price = price;
       this.classes = classes;
-      this.parent = document.querySelector(parentSelector);
+      this.parent = document.querySelector(selector);
       this.course = 40;
       this.changeCurrency();
     }
@@ -446,15 +446,46 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const result = document.querySelector('.calculating__result span');
 
-  let sex = 'woman', height, weight, age, ratio = 1.375; 
+  let sex = 'female', height, weight, age, ratio; 
+
+  if (localStorage.getItem('sex') ) {
+    sex = localStorage.getItem('sex');
+  } else {
+    sex = 'female';
+    localStorage.setItem('sex', 'female');
+  }
+
+  if (localStorage.getItem('ratio') ) {
+    ratio = localStorage.getItem('ratio');
+  } else {
+    ratio = 1.375;
+    localStorage.setItem('ratio', 1.375);
+  }
+
+  function initLocalSettings(selector,  activeClass) {
+    const elements = document.querySelectorAll(selector);
+
+    elements.forEach(elem => {
+      elem.classList.remove(activeClass);
+
+      if (elem.getAttribute('id') === localStorage.getItem('sex') ) {
+        elem.classList.add(activeClass);
+      } else if (elem.getAttribute('data-ratio') === localStorage.getItem('ratio') ) {
+        elem.classList.add(activeClass);
+      }
+    });
+  }
+
+  initLocalSettings('#gender div', 'calculating__choose-item_active');
+  initLocalSettings('.calculating__choose_big div', 'calculating__choose-item_active');
 
   function calcTotal() {
     if (!sex || !height || !weight || !age || !ratio) {
-      result.textContent = '____';
+      result.textContent = '____'; 
       return;
     }
 
-    if (sex === 'man') {
+    if (sex === 'male') {
     result.textContent = Math.round( (88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age)) * ratio );
     
     } else {
@@ -463,15 +494,17 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   calcTotal();
 
-  function getStaticInformation(parentSelector, activeClass) {
-    const elements = document.querySelectorAll(`${parentSelector} div`);
+  function getStaticInformation(selector, activeClass) {
+    const elements = document.querySelectorAll(selector);
 
     elements.forEach(elem => {
       elem.addEventListener('click', () => {
         if (elem.getAttribute('data-ratio') ) {
           ratio = +elem.getAttribute('data-ratio');
+          localStorage.setItem('ratio', +elem.getAttribute('data-ratio') );
         } else {
           sex = elem.getAttribute('id');
+          localStorage.setItem('sex', elem.getAttribute('id') );
         }
 
         elements.forEach(elem => {
@@ -485,13 +518,20 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  getStaticInformation('#gender', 'calculating__choose-item_active');
-  getStaticInformation('.calculating__choose_big', 'calculating__choose-item_active');
+  getStaticInformation('#gender div', 'calculating__choose-item_active');
+  getStaticInformation('.calculating__choose_big div ', 'calculating__choose-item_active');
 
   function getDinamicInfo(selector) {
     const input = document.querySelector(selector);
 
+
     input.addEventListener('input', () => {
+      if (input.value.match(/\D/g) ) {
+        input.style.border = '1px solid red';
+      } else {
+        input.style.border = 'none';
+      }
+      
       switch(input.getAttribute('id') ){
         case 'height':
           height = +input.value;
