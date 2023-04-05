@@ -1,5 +1,4 @@
-function timer() {
-  const deadline = '2023-04-30';
+function timer(id, deadline) {
 
   function getTimeRemaining(endtime) {
     let days, hours, minutes, seconds;
@@ -38,7 +37,7 @@ function timer() {
           days = document.querySelector('#days'),
           hours = document.querySelector('#hours'),
           minutes = document.querySelector('#minutes'),
-          seconds = document.querySelector('#seconds');
+          seconds = document.querySelector('#seconds'),
           timeInterval = setInterval(updateClock, 1000);
 
     updateClock();
@@ -57,7 +56,8 @@ function timer() {
     }
   }
 
-  setClock('.timer', deadline);
+  setClock(id, deadline);
 }
 
-module.exports = timer;
+export default timer;
+// module.exports = timer;

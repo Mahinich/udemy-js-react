@@ -1,3 +1,5 @@
+import { getResource } from "../services/services";
+
 function menuCards() {
   class MenuCard {
     constructor(src, alt, title, descr, price, selector, ...classes) {
@@ -37,16 +39,6 @@ function menuCards() {
     }
   }
 
-  const getResource = async (url) => {
-    const res = await fetch(url);
-
-    if (!res.ok) {
-      throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-    }
-    
-    return res.json();
-  };
-
 /*   getResource(`http://localhost:3000/menu`)
     .then(data => {
       data.forEach(({img, altimg, title, descr, price}) => { //used object destructuring assignment
@@ -79,4 +71,5 @@ function menuCards() {
   }
 }
 
-module.exports = menuCards;
+export default menuCards;
+// module.exports = menuCards;

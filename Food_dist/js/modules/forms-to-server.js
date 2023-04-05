@@ -1,5 +1,8 @@
-function formsToServer() {
-  const forms = document.querySelectorAll('form');
+import {showModal, hideModal} from './modal';
+import { postData } from '../services/services';
+
+function formsToServer(formSelector ,modalTimerId) {
+  const forms = document.querySelectorAll(formSelector);
 
   const message = { 
     success: 'Дякуємо, дані відправлені',
@@ -10,18 +13,6 @@ function formsToServer() {
   forms.forEach(item => {
     bindPostData(item);
   });
-
-  const postData = async (url, data) => {
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json' // no headers if to use FormData object instead of JSON
-      }, 
-      body: data
-    });
-
-    return await res.json();
-  };
 
     
   function bindPostData(form) {
@@ -51,7 +42,7 @@ function formsToServer() {
           showThanksModal(message.error);
         }).finally(() => {
           form.reset();
-        })
+        });
 
     });
   }
@@ -60,7 +51,7 @@ function formsToServer() {
     const prevModalDialog = document.querySelector('.modal__dialog');
 
     prevModalDialog.classList.add('hide');
-    showModal();
+    showModal('.modal', modalTimerId);
 
     const thanksModal = document.createElement('div');
     thanksModal.classList.add('.modal__dialog');
@@ -77,9 +68,10 @@ function formsToServer() {
       prevModalDialog.classList.add('show');
       prevModalDialog.classList.remove('hide');
 
-      hideModal();
+      hideModal('.modal');
     }, 4000);
   }
 }
 
-module.exports = formsToServer;
+export default formsToServer;
+// module.exports = formsToServer
