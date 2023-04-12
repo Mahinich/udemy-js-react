@@ -1,13 +1,7 @@
 'use strict';
 
-console.log(1);
+setTimeout(function() {
+  console.log('Mahinich');
+}, 0);
 
-setTimeout(() => {
-  console.log('timeout_2000');
-}, 2000);
-
-setTimeout(() => {
-  console.log('timeout_4000');
-}, 4000);
-
-console.log(2);
+console.log('Andriy');
